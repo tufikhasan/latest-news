@@ -1,11 +1,17 @@
-import './App.css';
+import React, { Component } from "react";
+import "./App.scss";
+import { Footer, Navbar, News } from "./components";
 
-function App() {
-  return (
-    <div className="App">
-      viral news
-    </div>
-  );
+export class App extends Component {
+  render() {
+    return (
+      <>
+        <Navbar />
+        <News />
+        <Footer />
+      </>
+    );
+  }
 }
 
 export default App;

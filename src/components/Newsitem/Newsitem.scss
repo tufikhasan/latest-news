@@ -59,6 +59,9 @@
   p.des {
     font-size: medium;
   }
+  p > small {
+    color: darkgrey;
+  }
   .app__news-tag {
     position: absolute;
     padding: 0.3rem 1rem;

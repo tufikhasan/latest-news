@@ -19,8 +19,8 @@ export default class Newsitem extends Component {
         </div>
         <div className="app__news-content">
           <h4 className="bold-text">{title}</h4>
-          <p class="p-text">
-            <small class="text-muted">
+          <p className="p-text">
+            <small className="text-muted">
               By {!author ? "Unknown" : author} on{" "}
               {new Date(date).toLocaleString()}
             </small>

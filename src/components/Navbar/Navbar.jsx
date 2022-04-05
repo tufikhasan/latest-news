@@ -19,14 +19,20 @@ export default class Navbar extends Component {
           </a>
         </div>
         <ul className="app__navbar-links">
-          {["home", "about", "work", "skills", "testimonial", "contact"].map(
-            (item) => (
-              <li className="app__flex p-text" key={`link-${item}`}>
-                <div />
-                <a href={`/${item}`}>{item}</a>
-              </li>
-            )
-          )}
+          {[
+            "home",
+            "business",
+            "entertainment",
+            "health",
+            "science",
+            "sports",
+            "technology",
+          ].map((item) => (
+            <li className="app__flex p-text" key={`link-${item}`}>
+              <div />
+              <a href={`/${item}`}>{item}</a>
+            </li>
+          ))}
         </ul>
         <div className="app__navbar-mobile-menu">
           <HiMenuAlt4
@@ -51,11 +57,12 @@ export default class Navbar extends Component {
               <ul>
                 {[
                   "home",
-                  "about",
-                  "work",
-                  "testimonial",
-                  "skills",
-                  "contact",
+                  "business",
+                  "entertainment",
+                  "health",
+                  "science",
+                  "sports",
+                  "technology",
                 ].map((item) => (
                   <li key={`link-${item}`}>
                     <a href={`/${item}`}>{item}</a>

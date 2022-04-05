@@ -1,3 +1,21 @@
 .app__news {
   padding: 6rem 0rem;
 }
+.pagination {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  button {
+    background-color: var(--secondary-color);
+    color: white;
+    &:hover {
+      background-color: #fff;
+      color: #000;
+    }
+    &:disabled {
+      background-color: #7f8c8d;
+      color: #000;
+      cursor: no-drop;
+    }
+  }
+}

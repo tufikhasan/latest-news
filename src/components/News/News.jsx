@@ -69,22 +69,23 @@ export default class News extends Component {
             </div>
           )}
           <div className="app__wrapper">
-            {this.state.articles.map((news, index) => {
-              return (
-                <Newsitem
-                  key={index}
-                  imageUrl={news.urlToImage}
-                  title={`${news.title.slice(0, 55)}..`}
-                  description={
-                    news.description ? news.description.slice(0, 88) : ""
-                  }
-                  source={news.source.name}
-                  newsUrl={news.url}
-                  author={news.author}
-                  date={news.publishedAt}
-                />
-              );
-            })}
+            {!this.state.loading &&
+              this.state.articles.map((news, index) => {
+                return (
+                  <Newsitem
+                    key={index}
+                    imageUrl={news.urlToImage}
+                    title={`${news.title.slice(0, 55)}..`}
+                    description={
+                      news.description ? news.description.slice(0, 88) : ""
+                    }
+                    source={news.source.name}
+                    newsUrl={news.url}
+                    author={news.author}
+                    date={news.publishedAt}
+                  />
+                );
+              })}
           </div>
         </div>
         <div className="pagination">

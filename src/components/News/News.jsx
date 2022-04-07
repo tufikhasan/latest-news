@@ -8,10 +8,12 @@ export default class News extends Component {
   static defaultProps = {
     pageSize: 4,
     country: "us",
+    category: "general",
   };
   static propTypes = {
     pageSize: PropTypes.number,
     country: PropTypes.string,
+    category: PropTypes.string,
   };
   constructor(props) {
     super(props);
@@ -23,7 +25,7 @@ export default class News extends Component {
     };
   }
   async updateNews() {
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=824fba3880914e30accf0303f3427890&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=824fba3880914e30accf0303f3427890&category=${this.props.category}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
     let reecivedData = await data.json();
@@ -61,7 +63,7 @@ export default class News extends Component {
       <>
         <div className="app__news">
           <h2 className="head-text">
-            Latest News - <span>Top Heading</span>
+            Latest News - <span>Top {this.props.category} Heading</span>
           </h2>
           {this.state.loading && (
             <div className="app__wrapper">

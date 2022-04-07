@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Navbar.scss";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default class Navbar extends Component {
   constructor() {
@@ -14,9 +15,9 @@ export default class Navbar extends Component {
     return (
       <nav className="app__navbar">
         <div className="app__navbar-logo">
-          <a href="/" className="logo-text">
+          <Link to="/" className="logo-text">
             Latest <span>News</span>
-          </a>
+          </Link>
         </div>
         <ul className="app__navbar-links">
           {[
@@ -30,7 +31,7 @@ export default class Navbar extends Component {
           ].map((item) => (
             <li className="app__flex p-text" key={`link-${item}`}>
               <div />
-              <a href={`/${item}`}>{item}</a>
+              <Link to={`/${item === "home" ? "" : item}`}>{item}</Link>
             </li>
           ))}
         </ul>
@@ -65,7 +66,7 @@ export default class Navbar extends Component {
                   "technology",
                 ].map((item) => (
                   <li key={`link-${item}`}>
-                    <a href={`/${item}`}>{item}</a>
+                    <Link to={`/${item === "home" ? "" : item}`}>{item}</Link>
                   </li>
                 ))}
               </ul>

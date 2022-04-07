@@ -1,0 +1,12 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: darkgray;
+  color: #fff;
+  padding: 1rem 0;
+  a {
+    display: inline-block;
+    color: brown;
+  }
+}

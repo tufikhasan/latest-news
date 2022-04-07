@@ -15,6 +15,9 @@ export default class News extends Component {
     country: PropTypes.string,
     category: PropTypes.string,
   };
+  capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -23,6 +26,9 @@ export default class News extends Component {
       totalResults: "",
       loading: false,
     };
+    document.title = `${this.capitalizeFirstLetter(
+      this.props.category === "general" ? "home" : this.props.category
+    )} - Latest News`;
   }
   async updateNews() {
     let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=824fba3880914e30accf0303f3427890&category=${this.props.category}&page=${this.state.page}&pageSize=${this.props.pageSize}`;

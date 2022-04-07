@@ -16,7 +16,11 @@ export class App extends Component {
   render() {
     return (
       <>
-        <LoadingBar color="#313bac" progress={this.state.progress} height={5} />
+        <LoadingBar
+          color="var(--secondary-color)"
+          progress={this.state.progress}
+          height={5}
+        />
         <Navbar />
         <Routes>
           <Route

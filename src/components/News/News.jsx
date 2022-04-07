@@ -32,15 +32,18 @@ export default class News extends Component {
     )} - Latest News`;
   }
   async updateNews() {
+    this.props.setProgress(10);
     let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&apiKey=824fba3880914e30accf0303f3427890&category=${this.props.category}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
+    this.props.setProgress(50);
     let reecivedData = await data.json();
     this.setState({
       articles: reecivedData.articles,
       totalResults: reecivedData.totalResults,
       loading: false,
     });
+    this.props.setProgress(100);
   }
   async componentDidMount() {
     this.updateNews();

@@ -69,7 +69,14 @@ export default class News extends Component {
       <>
         <div className="app__news">
           <h2 className="head-text">
-            Latest News - <span>Top {this.props.category} Heading</span>
+            News -
+            <span>
+              {" "}
+              Top {this.props.category === "general"
+                ? ""
+                : this.props.category}{" "}
+              Heading
+            </span>
           </h2>
           {this.state.loading && (
             <div className="app__wrapper">
